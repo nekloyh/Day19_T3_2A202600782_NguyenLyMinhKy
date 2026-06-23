@@ -1,0 +1,13 @@
+{
+  "documents": 70,
+  "nodes": 597,
+  "edges": 993,
+  "triples": 331,
+  "indexing_seconds": 0.488,
+  "extractor": "openai",
+  "model": "gpt-4o-mini",
+  "llm_calls": 70,
+  "input_tokens": 61252,
+  "output_tokens": 36853,
+  "estimated_cost_usd": 0.0312996
+}

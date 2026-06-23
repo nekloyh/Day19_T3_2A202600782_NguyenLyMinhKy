@@ -1,0 +1,677 @@
+benchmark_id,question,expected_doc,gold_answer,required_terms,flat_top1,graph_top1,flat_rank,graph_rank,flat_hit_at_3,graph_hit_at_3,flat_answer,flat_answer_doc,flat_evidence,flat_term_coverage,graph_answer,graph_answer_doc,graph_evidence,graph_term_coverage,entities_matched,graph_triples
+B01,"Which policy regime was associated with a 5% new-EV share, compared with 1.3% elsewhere?",doc_1,States with zero-emission vehicle regulations had a 5% new-EV share; states without them averaged 1.3%.,zero-emission; 5%; 1.3%,doc_43,doc_43,35,35,False,False,"Scott Kennedy and colleagues at the Center for Strategic and International Studies (CSIS) estimated that, from 2009 to 2023 alone, China channeled $230.9 billion in subsidies and other support to its domestic EV sector.[183] (Note: $25 billion of this amount was R&D investment, which ITIF would generally not characterize as a market-distorting subsidy, so long as a country makes enterprises from all nations eligible for R&D tax credits or the ability to win R&D grants.) CSIS found that Chinese EV subsidies have only increased in recent years, with an estimated $120.9 billion in subsidies over just the previous three years ($30.1 billion in 2021, $45.8 billion in 2022, and $45.3 billion in 2023), compared with a total of $49 billion in subsidies the three years prior, and $60.7 billion in subsidies from 2009 to 2017 (then at a $6.74 billion annual rate).[184] In 2023, the Chinese government extended $809 million in subsidies to EV battery maker CATL (more than double the $401 million it provided in 2022) and $208.9 million to EVE Energy (China’s fourth-largest EV battery producer).[185] From 2018 to 2023, the Chinese government extended a total of $1.8 billion in subsidies to CATL alone. [Nguồn: doc_43]",doc_43,"Scott Kennedy and colleagues at the Center for Strategic and International Studies (CSIS) estimated that, from 2009 to 2023 alone, China channeled $230.9 billion in subsidies and other support to its domestic EV sector.[183] (Note: $25 billion of this amount was R&D investment, which ITIF would generally not characterize as a market-distorting subsidy, so long as a country makes enterprises from all nations eligible for R&D tax credits or the ability to win R&D grants.) CSIS found that Chinese EV subsidies have only increased in recent years, with an estimated $120.9 billion in subsidies over just the previous three years ($30.1 billion in 2021, $45.8 billion in 2022, and $45.3 billion in 2023), compared with a total of $49 billion in subsidies the three years prior, and $60.7 billion in subsidies from 2009 to 2017 (then at a $6.74 billion annual rate).[184] In 2023, the Chinese government extended $809 million in subsidies to EV battery maker CATL (more than double the $401 million it provided in 2022) and $208.9 million to EVE Energy (China’s fourth-largest EV battery producer).[185] From 2018 to 2023, the Chinese government extended a total of $1.8 billion in subsidies to CATL alone.",0.0,"Scott Kennedy and colleagues at the Center for Strategic and International Studies (CSIS) estimated that, from 2009 to 2023 alone, China channeled $230.9 billion in subsidies and other support to its domestic EV sector.[183] (Note: $25 billion of this amount was R&D investment, which ITIF would generally not characterize as a market-distorting subsidy, so long as a country makes enterprises from all nations eligible for R&D tax credits or the ability to win R&D grants.) CSIS found that Chinese EV subsidies have only increased in recent years, with an estimated $120.9 billion in subsidies over just the previous three years ($30.1 billion in 2021, $45.8 billion in 2022, and $45.3 billion in 2023), compared with a total of $49 billion in subsidies the three years prior, and $60.7 billion in subsidies from 2009 to 2017 (then at a $6.74 billion annual rate).[184] In 2023, the Chinese government extended $809 million in subsidies to EV battery maker CATL (more than double the $401 million it provided in 2022) and $208.9 million to EVE Energy (China’s fourth-largest EV battery producer).[185] From 2018 to 2023, the Chinese government extended a total of $1.8 billion in subsidies to CATL alone. [Nguồn: doc_43]",doc_43,"Scott Kennedy and colleagues at the Center for Strategic and International Studies (CSIS) estimated that, from 2009 to 2023 alone, China channeled $230.9 billion in subsidies and other support to its domestic EV sector.[183] (Note: $25 billion of this amount was R&D investment, which ITIF would generally not characterize as a market-distorting subsidy, so long as a country makes enterprises from all nations eligible for R&D tax credits or the ability to win R&D grants.) CSIS found that Chinese EV subsidies have only increased in recent years, with an estimated $120.9 billion in subsidies over just the previous three years ($30.1 billion in 2021, $45.8 billion in 2022, and $45.3 billion in 2023), compared with a total of $49 billion in subsidies the three years prior, and $60.7 billion in subsidies from 2009 to 2017 (then at a $6.74 billion annual rate).[184] In 2023, the Chinese government extended $809 million in subsidies to EV battery maker CATL (more than double the $401 million it provided in 2022) and $208.9 million to EVE Energy (China’s fourth-largest EV battery producer).[185] From 2018 to 2023, the Chinese government extended a total of $1.8 billion in subsidies to CATL alone.",0.0,,
+B02,"How many new EVs did Americans buy in Q1 2024, and what was their share of new-vehicle sales?",doc_2,"Americans bought 268,909 new EVs and EVs represented 7.3% of new-vehicle sales.","268,909; 7.3%",doc_43,doc_43,9,4,False,False,"Analysts expect that 11.5 million new EVs will be sold in China in 2024 (compared with 3.3 million in Europe and 2.7 million across the rest of the world), which they expect will account for 44 percent of new vehicles sold in the country this year. [Nguồn: doc_43]",doc_43,"Analysts expect that 11.5 million new EVs will be sold in China in 2024 (compared with 3.3 million in Europe and 2.7 million across the rest of the world), which they expect will account for 44 percent of new vehicles sold in the country this year.",0.0,"Analysts expect that 11.5 million new EVs will be sold in China in 2024 (compared with 3.3 million in Europe and 2.7 million across the rest of the world), which they expect will account for 44 percent of new vehicles sold in the country this year. [Nguồn: doc_43]",doc_43,"Analysts expect that 11.5 million new EVs will be sold in China in 2024 (compared with 3.3 million in Europe and 2.7 million across the rest of the world), which they expect will account for 44 percent of new vehicles sold in the country this year.",0.0,"electric share of new vehicle sales in 2020; Americans; 51 for new-vehicle sales; 268,909 new electric vehicles; EV share of total new-vehicle sales in Q1; Average transaction price for a new EV in Q1","(electric share of new vehicle sales in 2020, WAS, approximately 2.4%) [doc_1] | (doc_1, MENTIONS, approximately 2.4%) [doc_1] | (doc_1, MENTIONS, electric share of new vehicle sales in 2020) [doc_1]"
+B03,What battery warranty is offered by several EV manufacturers?,doc_3,"Several manufacturers offer an 8-year/100,000-mile battery warranty.","8-year; 100,000",doc_43,doc_43,9,7,False,False,"In December 2023, Chinese EV maker Nio unveiled its ET7 sedan with a semi-solid state, 150 kWh battery made by Chinese battery company WeLion, which can travel 650 miles on a single charge and which the company’s CEO, William Li, asserted currently represents the “battery pack with the highest energy density in mass production in the world.”[77] In April 2024, Chinese automaker GAC group (also an LFP battery maker) asserted it had developed an ASSB capable of 620 miles per charge that would be production ready at scale for its Hyper vehicles by 2026.[78] The Chinese government has provided 6 billion yuan (nearly $830 million) to Chinese companies including CATL and BYD to research and develop the next generation of solid-state batteries in China.[79]
+Perhaps most intriguing is a new entrant, Tailan New Energy, a Chongqing-based start-up formed in 2018 that in April 2024 had developed the first automotive-grade, all solid-state lithium-metal prototype that has a single-cell capacity of 120 amperes (Ah) and a real-world energy density of 720 watt hours per kilogram (wh/kg).[80] If the technology can be mass produced, the battery could in theory support a range of 2,000 km (over almost 1,300 miles) on a single charge.[81] According to Tailan, the company “has achieved several technological breakthroughs in all-solid-state lithium batteries.”[82] Those breakthroughs pertain specifically “to ultra-thin and dense composite oxide solid electrolytes, high-capacity advanced positive and negative electrode materials, and an integrated molding process that culminates into a 120 Ah solid-state lithium metal cell.”[83] While the company asserts its batteries are vehicle grade, it has yet to announce specific plans for passenger vehicle integration. [Nguồn: doc_43]",doc_43,"In December 2023, Chinese EV maker Nio unveiled its ET7 sedan with a semi-solid state, 150 kWh battery made by Chinese battery company WeLion, which can travel 650 miles on a single charge and which the company’s CEO, William Li, asserted currently represents the “battery pack with the highest energy density in mass production in the world.”[77] In April 2024, Chinese automaker GAC group (also an LFP battery maker) asserted it had developed an ASSB capable of 620 miles per charge that would be production ready at scale for its Hyper vehicles by 2026.[78] The Chinese government has provided 6 billion yuan (nearly $830 million) to Chinese companies including CATL and BYD to research and develop the next generation of solid-state batteries in China.[79]
+Perhaps most intriguing is a new entrant, Tailan New Energy, a Chongqing-based start-up formed in 2018 that in April 2024 had developed the first automotive-grade, all solid-state lithium-metal prototype that has a single-cell capacity of 120 amperes (Ah) and a real-world energy density of 720 watt hours per kilogram (wh/kg).[80] If the technology can be mass produced, the battery could in theory support a range of 2,000 km (over almost 1,300 miles) on a single charge.[81] According to Tailan, the company “has achieved several technological breakthroughs in all-solid-state lithium batteries.”[82] Those breakthroughs pertain specifically “to ultra-thin and dense composite oxide solid electrolytes, high-capacity advanced positive and negative electrode materials, and an integrated molding process that culminates into a 120 Ah solid-state lithium metal cell.”[83] While the company asserts its batteries are vehicle grade, it has yet to announce specific plans for passenger vehicle integration.",0.0,"In December 2023, Chinese EV maker Nio unveiled its ET7 sedan with a semi-solid state, 150 kWh battery made by Chinese battery company WeLion, which can travel 650 miles on a single charge and which the company’s CEO, William Li, asserted currently represents the “battery pack with the highest energy density in mass production in the world.”[77] In April 2024, Chinese automaker GAC group (also an LFP battery maker) asserted it had developed an ASSB capable of 620 miles per charge that would be production ready at scale for its Hyper vehicles by 2026.[78] The Chinese government has provided 6 billion yuan (nearly $830 million) to Chinese companies including CATL and BYD to research and develop the next generation of solid-state batteries in China.[79]
+Perhaps most intriguing is a new entrant, Tailan New Energy, a Chongqing-based start-up formed in 2018 that in April 2024 had developed the first automotive-grade, all solid-state lithium-metal prototype that has a single-cell capacity of 120 amperes (Ah) and a real-world energy density of 720 watt hours per kilogram (wh/kg).[80] If the technology can be mass produced, the battery could in theory support a range of 2,000 km (over almost 1,300 miles) on a single charge.[81] According to Tailan, the company “has achieved several technological breakthroughs in all-solid-state lithium batteries.”[82] Those breakthroughs pertain specifically “to ultra-thin and dense composite oxide solid electrolytes, high-capacity advanced positive and negative electrode materials, and an integrated molding process that culminates into a 120 Ah solid-state lithium metal cell.”[83] While the company asserts its batteries are vehicle grade, it has yet to announce specific plans for passenger vehicle integration. [Nguồn: doc_43]",doc_43,"In December 2023, Chinese EV maker Nio unveiled its ET7 sedan with a semi-solid state, 150 kWh battery made by Chinese battery company WeLion, which can travel 650 miles on a single charge and which the company’s CEO, William Li, asserted currently represents the “battery pack with the highest energy density in mass production in the world.”[77] In April 2024, Chinese automaker GAC group (also an LFP battery maker) asserted it had developed an ASSB capable of 620 miles per charge that would be production ready at scale for its Hyper vehicles by 2026.[78] The Chinese government has provided 6 billion yuan (nearly $830 million) to Chinese companies including CATL and BYD to research and develop the next generation of solid-state batteries in China.[79]
+Perhaps most intriguing is a new entrant, Tailan New Energy, a Chongqing-based start-up formed in 2018 that in April 2024 had developed the first automotive-grade, all solid-state lithium-metal prototype that has a single-cell capacity of 120 amperes (Ah) and a real-world energy density of 720 watt hours per kilogram (wh/kg).[80] If the technology can be mass produced, the battery could in theory support a range of 2,000 km (over almost 1,300 miles) on a single charge.[81] According to Tailan, the company “has achieved several technological breakthroughs in all-solid-state lithium batteries.”[82] Those breakthroughs pertain specifically “to ultra-thin and dense composite oxide solid electrolytes, high-capacity advanced positive and negative electrode materials, and an integrated molding process that culminates into a 120 Ah solid-state lithium metal cell.”[83] While the company asserts its batteries are vehicle grade, it has yet to announce specific plans for passenger vehicle integration.",0.0,manufacturers of electric vehicles,"(manufacturers of electric vehicles, OFFER, 8-year/100,000-mile battery warranties) [doc_3] | (manufacturers of electric vehicles, OFFER, 8-year/100,000-mile battery warranties) [doc_17] | (doc_3, MENTIONS, 8-year/100,000-mile battery warranties) [doc_3]"
+B04,What annual global BEV-volume growth did Citi forecast while describing sentiment as overly negative?,doc_5,Citi forecast 12% global BEV-volume growth for the year.,12%; negative,doc_49,doc_32,3,2,True,True,"Citi BEV Forecast, by Region 
+  © 2024 Citigroup Inc. [Nguồn: doc_32]",doc_32,"Citi BEV Forecast, by Region 
+  © 2024 Citigroup Inc.",0.0,"Citi BEV Forecast, by Region 
+  © 2024 Citigroup Inc. [Nguồn: doc_32]",doc_32,"Citi BEV Forecast, by Region 
+  © 2024 Citigroup Inc.",0.0,global EV market; Forecast for 2025; 2025 EV sales forecast,"(China, DOMINATES, global EV market) [doc_10] | (China, MADE, 16 percent of batteries and vehicles sold in Europe in 2022) [doc_7] | (China, MADE, 16 percent of batteries and vehicles sold in Europe in 2022) [doc_65]"
+B05,What investment and job totals were announced for U.S. EV and battery manufacturing?,doc_6,"Manufacturers announced $188 billion in investment and 195,000 direct jobs.","188 billion; 195,000",doc_43,doc_43,15,15,False,False,"That funding built on an additional $32 million DOE for the same program earlier in the month.[230]
+On July 11, 2024, the Biden administration announced $1.7 billion in grants to GM, Stellantis, and other carmakers to help restart or expand EV manufacturing and assembly in eight U.S. [Nguồn: doc_43]",doc_43,"That funding built on an additional $32 million DOE for the same program earlier in the month.[230]
+On July 11, 2024, the Biden administration announced $1.7 billion in grants to GM, Stellantis, and other carmakers to help restart or expand EV manufacturing and assembly in eight U.S.",0.0,"That funding built on an additional $32 million DOE for the same program earlier in the month.[230]
+On July 11, 2024, the Biden administration announced $1.7 billion in grants to GM, Stellantis, and other carmakers to help restart or expand EV manufacturing and assembly in eight U.S. [Nguồn: doc_43]",doc_43,"That funding built on an additional $32 million DOE for the same program earlier in the month.[230]
+On July 11, 2024, the Biden administration announced $1.7 billion in grants to GM, Stellantis, and other carmakers to help restart or expand EV manufacturing and assembly in eight U.S.",0.0,,
+B06,How does EV energy efficiency compare with gasoline-vehicle efficiency in the EPA source?,doc_8,"EVs use about 87%–91% of battery energy, while gasoline vehicles convert about 16%–25%.",87%; 91%; 16; 25,doc_17,doc_17,3,3,True,True,You can select an EV or PHEV model and type in your zip code to see the CO2 emissions and how they stack up against those associated with a gasoline car. [Nguồn: doc_8],doc_8,You can select an EV or PHEV model and type in your zip code to see the CO2 emissions and how they stack up against those associated with a gasoline car.,0.0,You can select an EV or PHEV model and type in your zip code to see the CO2 emissions and how they stack up against those associated with a gasoline car. [Nguồn: doc_8],doc_8,You can select an EV or PHEV model and type in your zip code to see the CO2 emissions and how they stack up against those associated with a gasoline car.,0.0,,
+B07,What global sales milestone for battery-electric and plug-in hybrid cars was reached in 2019?,doc_9,Sales passed two million vehicles for the first time in 2019.,two-million; 2019,doc_43,doc_43,5,5,False,False,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales. [Nguồn: doc_43]",doc_43,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales.",0.0,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales. [Nguồn: doc_43]",doc_43,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales.",0.0,global EV market; stronger demand growth for plug-in hybrid electric vehicles (PHEVs) through 2026,"(China, DOMINATES, global EV market) [doc_10] | (China, MADE, 16 percent of batteries and vehicles sold in Europe in 2022) [doc_7] | (China, MADE, 16 percent of batteries and vehicles sold in Europe in 2022) [doc_65]"
+B08,Which transport trends does the annual Electric Vehicle Outlook examine alongside electrification?,doc_10,It examines shared mobility and autonomous driving alongside electrification.,shared mobility; autonomous,doc_49,doc_49,10,7,False,False,"The eCharge project, which will allow electric cars to charge as they drive, involves partners from multiple industries. [Nguồn: doc_54]",doc_54,"The eCharge project, which will allow electric cars to charge as they drive, involves partners from multiple industries.",0.0,"The eCharge project, which will allow electric cars to charge as they drive, involves partners from multiple industries. [Nguồn: doc_54]",doc_54,"The eCharge project, which will allow electric cars to charge as they drive, involves partners from multiple industries.",0.0,Market Trends; Electric Vehicle Outlook,"(2025 Investment Directions, NAVIGATING, Market Trends) [doc_52] | (doc_52, MENTIONS, 2025 Investment Directions) [doc_52] | (doc_52, MENTIONS, Market Trends) [doc_52]"
+B09,"What first-quarter revenue did NVIDIA report for the quarter ending April 28, 2024?",doc_11,NVIDIA reported $26.0 billion in revenue.,26.0 billion,doc_43,doc_11,3,1,True,True,"NVIDIA (NASDAQ: NVDA) today reported revenue for the first quarter ended April 28, 2024, of $26.0 billion, up 18% from the previous quarter and up 262% from a year ago. [Nguồn: doc_11]",doc_11,"NVIDIA (NASDAQ: NVDA) today reported revenue for the first quarter ended April 28, 2024, of $26.0 billion, up 18% from the previous quarter and up 262% from a year ago.",1.0,"NVIDIA (NASDAQ: NVDA) today reported revenue for the first quarter ended April 28, 2024, of $26.0 billion, up 18% from the previous quarter and up 262% from a year ago. [Nguồn: doc_11]",doc_11,"NVIDIA (NASDAQ: NVDA) today reported revenue for the first quarter ended April 28, 2024, of $26.0 billion, up 18% from the previous quarter and up 262% from a year ago.",1.0,Revenue; NVIDIA,"(Revenue, FOR_NINE_MONTHS_ENDED, 1,844.4 million U.S. dollars) [doc_12] | (doc_12, MENTIONS, 1,844.4 million U.S. dollars) [doc_12] | (doc_12, MENTIONS, Revenue) [doc_12]"
+B10,What nine-month revenue did Polestar report for 2023 and what was the year-over-year change?,doc_12,"Polestar reported $1,844.4 million in revenue, up 25%.","1,844.4; 25",doc_12,doc_12,1,1,True,True,"dollars unless otherwise stated)
+ 
+For the three months
+			ended September 30,
+ 
+For the nine months
+			ended September 30,
+ 
+2023
+ 
+2022
+ 
+2023
+ 
+2022
+Revenue
+613,182
+ 
+435,449
+ 
+1,844,447
+ 
+1,476,746
+ 
+Cost of sales
+(609,581
+)
+(431,390
+)
+(1,823,234
+)
+(1,419,271
+)
+Gross profit
+3,601
+ 
+4,059
+ 
+21,213
+ 
+57,475
+ 
+Selling, general and administrative expense
+(236,246
+)
+(178,643
+)
+(684,877
+)
+(625,424
+)
+Research and development expense
+(54,865
+)
+(24,598
+)
+(136,176
+)
+(123,353
+)
+Other operating income (expense), net
+26,305
+ 
+2,781
+ 
+64,886
+ 
+(17,961
+)
+Listing expense
+—
+ 
+—
+ 
+—
+ 
+(372,318
+)
+Operating loss
+(261,205
+)
+(196,401
+)
+(734,954
+)
+(1,081,581
+)
+Finance income
+8,997
+ 
+711
+ 
+21,487
+ 
+1,485
+ 
+Finance expense
+(63,389
+)
+(60,539
+)
+(153,904
+)
+(111,966
+)
+Fair value change - Earn-out rights
+155,557
+ 
+546,961
+ 
+388,552
+ 
+965,668
+ 
+Fair value change - Class C Shares
+7,250
+ 
+14,059
+ 
+18,000
+ 
+35,590
+ 
+Income (loss) before income taxes
+(152,790
+)
+304,791
+ 
+(460,819
+)
+(190,804
+)
+Income tax expense
+(2,579
+)
+(5,404
+)
+(7,581
+)
+(12,543
+)
+Net income (loss)
+(155,369
+)
+299,387
+ 
+(468,400
+)
+(203,347
+)
+Polestar Automotive Holding UK PLC
+Preliminary Unaudited Consolidated Statement of Financial Position
+(in thousands of U.S. [Nguồn: doc_12]",doc_12,"dollars unless otherwise stated)
+ 
+For the three months
+			ended September 30,
+ 
+For the nine months
+			ended September 30,
+ 
+2023
+ 
+2022
+ 
+2023
+ 
+2022
+Revenue
+613,182
+ 
+435,449
+ 
+1,844,447
+ 
+1,476,746
+ 
+Cost of sales
+(609,581
+)
+(431,390
+)
+(1,823,234
+)
+(1,419,271
+)
+Gross profit
+3,601
+ 
+4,059
+ 
+21,213
+ 
+57,475
+ 
+Selling, general and administrative expense
+(236,246
+)
+(178,643
+)
+(684,877
+)
+(625,424
+)
+Research and development expense
+(54,865
+)
+(24,598
+)
+(136,176
+)
+(123,353
+)
+Other operating income (expense), net
+26,305
+ 
+2,781
+ 
+64,886
+ 
+(17,961
+)
+Listing expense
+—
+ 
+—
+ 
+—
+ 
+(372,318
+)
+Operating loss
+(261,205
+)
+(196,401
+)
+(734,954
+)
+(1,081,581
+)
+Finance income
+8,997
+ 
+711
+ 
+21,487
+ 
+1,485
+ 
+Finance expense
+(63,389
+)
+(60,539
+)
+(153,904
+)
+(111,966
+)
+Fair value change - Earn-out rights
+155,557
+ 
+546,961
+ 
+388,552
+ 
+965,668
+ 
+Fair value change - Class C Shares
+7,250
+ 
+14,059
+ 
+18,000
+ 
+35,590
+ 
+Income (loss) before income taxes
+(152,790
+)
+304,791
+ 
+(460,819
+)
+(190,804
+)
+Income tax expense
+(2,579
+)
+(5,404
+)
+(7,581
+)
+(12,543
+)
+Net income (loss)
+(155,369
+)
+299,387
+ 
+(468,400
+)
+(203,347
+)
+Polestar Automotive Holding UK PLC
+Preliminary Unaudited Consolidated Statement of Financial Position
+(in thousands of U.S.",0.5,"dollars unless otherwise stated)
+ 
+For the three months
+			ended September 30,
+ 
+For the nine months
+			ended September 30,
+ 
+2023
+ 
+2022
+ 
+2023
+ 
+2022
+Revenue
+613,182
+ 
+435,449
+ 
+1,844,447
+ 
+1,476,746
+ 
+Cost of sales
+(609,581
+)
+(431,390
+)
+(1,823,234
+)
+(1,419,271
+)
+Gross profit
+3,601
+ 
+4,059
+ 
+21,213
+ 
+57,475
+ 
+Selling, general and administrative expense
+(236,246
+)
+(178,643
+)
+(684,877
+)
+(625,424
+)
+Research and development expense
+(54,865
+)
+(24,598
+)
+(136,176
+)
+(123,353
+)
+Other operating income (expense), net
+26,305
+ 
+2,781
+ 
+64,886
+ 
+(17,961
+)
+Listing expense
+—
+ 
+—
+ 
+—
+ 
+(372,318
+)
+Operating loss
+(261,205
+)
+(196,401
+)
+(734,954
+)
+(1,081,581
+)
+Finance income
+8,997
+ 
+711
+ 
+21,487
+ 
+1,485
+ 
+Finance expense
+(63,389
+)
+(60,539
+)
+(153,904
+)
+(111,966
+)
+Fair value change - Earn-out rights
+155,557
+ 
+546,961
+ 
+388,552
+ 
+965,668
+ 
+Fair value change - Class C Shares
+7,250
+ 
+14,059
+ 
+18,000
+ 
+35,590
+ 
+Income (loss) before income taxes
+(152,790
+)
+304,791
+ 
+(460,819
+)
+(190,804
+)
+Income tax expense
+(2,579
+)
+(5,404
+)
+(7,581
+)
+(12,543
+)
+Net income (loss)
+(155,369
+)
+299,387
+ 
+(468,400
+)
+(203,347
+)
+Polestar Automotive Holding UK PLC
+Preliminary Unaudited Consolidated Statement of Financial Position
+(in thousands of U.S. [Nguồn: doc_12]",doc_12,"dollars unless otherwise stated)
+ 
+For the three months
+			ended September 30,
+ 
+For the nine months
+			ended September 30,
+ 
+2023
+ 
+2022
+ 
+2023
+ 
+2022
+Revenue
+613,182
+ 
+435,449
+ 
+1,844,447
+ 
+1,476,746
+ 
+Cost of sales
+(609,581
+)
+(431,390
+)
+(1,823,234
+)
+(1,419,271
+)
+Gross profit
+3,601
+ 
+4,059
+ 
+21,213
+ 
+57,475
+ 
+Selling, general and administrative expense
+(236,246
+)
+(178,643
+)
+(684,877
+)
+(625,424
+)
+Research and development expense
+(54,865
+)
+(24,598
+)
+(136,176
+)
+(123,353
+)
+Other operating income (expense), net
+26,305
+ 
+2,781
+ 
+64,886
+ 
+(17,961
+)
+Listing expense
+—
+ 
+—
+ 
+—
+ 
+(372,318
+)
+Operating loss
+(261,205
+)
+(196,401
+)
+(734,954
+)
+(1,081,581
+)
+Finance income
+8,997
+ 
+711
+ 
+21,487
+ 
+1,485
+ 
+Finance expense
+(63,389
+)
+(60,539
+)
+(153,904
+)
+(111,966
+)
+Fair value change - Earn-out rights
+155,557
+ 
+546,961
+ 
+388,552
+ 
+965,668
+ 
+Fair value change - Class C Shares
+7,250
+ 
+14,059
+ 
+18,000
+ 
+35,590
+ 
+Income (loss) before income taxes
+(152,790
+)
+304,791
+ 
+(460,819
+)
+(190,804
+)
+Income tax expense
+(2,579
+)
+(5,404
+)
+(7,581
+)
+(12,543
+)
+Net income (loss)
+(155,369
+)
+299,387
+ 
+(468,400
+)
+(203,347
+)
+Polestar Automotive Holding UK PLC
+Preliminary Unaudited Consolidated Statement of Financial Position
+(in thousands of U.S.",0.5,Revenue,"(Revenue, FOR_NINE_MONTHS_ENDED, 1,844.4 million U.S. dollars) [doc_12] | (doc_12, MENTIONS, 1,844.4 million U.S. dollars) [doc_12] | (doc_12, MENTIONS, Revenue) [doc_12]"
+B11,How many vehicles did VinFast deliver in Q3 2024 and what was its year-over-year delivery growth?,doc_13,"VinFast delivered 21,912 vehicles, up 115% year over year.","21,912; 115",doc_13,doc_13,1,1,True,True,"Building on the strong momentum from the third quarter, particularly in key markets like Vietnam and North America, VinFast is reiterating its annual delivery target of 80,000 vehicles. [Nguồn: doc_13]",doc_13,"Building on the strong momentum from the third quarter, particularly in key markets like Vietnam and North America, VinFast is reiterating its annual delivery target of 80,000 vehicles.",0.0,"Building on the strong momentum from the third quarter, particularly in key markets like Vietnam and North America, VinFast is reiterating its annual delivery target of 80,000 vehicles. [Nguồn: doc_13]",doc_13,"Building on the strong momentum from the third quarter, particularly in key markets like Vietnam and North America, VinFast is reiterating its annual delivery target of 80,000 vehicles.",0.0,VinFast; 43 in Q3,"(VinFast, REVENUE, US$511.6 million) [doc_13] | (doc_13, MENTIONS, US$511.6 million) [doc_13] | (VinFast, DELIVERED_ELECTRIC_VEHICLES, 21,912) [doc_13]"
+B12,What were ZEEKR's deliveries in the first quarter of 2024?,doc_14,"ZEEKR reported 33,059 deliveries in Q1 2024.","33,059",doc_14,doc_14,1,1,True,True,"In April 2024, the Company launched the ZEEKR 009 Grand, a deluxe version of the ZEEKR 009, and started deliveries in May 2024. [Nguồn: doc_14]",doc_14,"In April 2024, the Company launched the ZEEKR 009 Grand, a deluxe version of the ZEEKR 009, and started deliveries in May 2024.",0.0,"In April 2024, the Company launched the ZEEKR 009 Grand, a deluxe version of the ZEEKR 009, and started deliveries in May 2024. [Nguồn: doc_14]",doc_14,"In April 2024, the Company launched the ZEEKR 009 Grand, a deluxe version of the ZEEKR 009, and started deliveries in May 2024.",0.0,,
+B13,What EBIT and revenue did Mercedes-Benz Group report for 2023?,doc_16,Mercedes-Benz reported €19.7 billion EBIT and €153.2 billion revenue.,19.7; 153.2,doc_16,doc_16,1,1,True,True,"Revenue at Mercedes-Benz Vans rose by 18% to â¬20.3 billion (2022: â¬17.2 billion) and adjusted EBIT increased 59% to â¬3.1 billion (2022: â¬1.9 billion) year-on-year, as unit sales improved 8% to a record 447,800 units (2022: 415,300 units). [Nguồn: doc_16]",doc_16,"Revenue at Mercedes-Benz Vans rose by 18% to â¬20.3 billion (2022: â¬17.2 billion) and adjusted EBIT increased 59% to â¬3.1 billion (2022: â¬1.9 billion) year-on-year, as unit sales improved 8% to a record 447,800 units (2022: 415,300 units).",0.0,"Revenue at Mercedes-Benz Vans rose by 18% to â¬20.3 billion (2022: â¬17.2 billion) and adjusted EBIT increased 59% to â¬3.1 billion (2022: â¬1.9 billion) year-on-year, as unit sales improved 8% to a record 447,800 units (2022: 415,300 units). [Nguồn: doc_16]",doc_16,"Revenue at Mercedes-Benz Vans rose by 18% to â¬20.3 billion (2022: â¬17.2 billion) and adjusted EBIT increased 59% to â¬3.1 billion (2022: â¬1.9 billion) year-on-year, as unit sales improved 8% to a record 447,800 units (2022: 415,300 units).",0.0,Revenue,"(Revenue, FOR_NINE_MONTHS_ENDED, 1,844.4 million U.S. dollars) [doc_12] | (doc_12, MENTIONS, 1,844.4 million U.S. dollars) [doc_12] | (doc_12, MENTIONS, Revenue) [doc_12]"
+B14,What payload and cargo-space advantage does REE's P7 platform claim?,doc_19,"P7 supports up to 8,800 lbs and up to 35% more cargo space.","8,800; 35%",doc_19,doc_19,1,1,True,True,"With the upcoming commencement of commercial trials for the P7 platform, REE is one step closer to obtaining order commitments and serial production. [Nguồn: doc_19]",doc_19,"With the upcoming commencement of commercial trials for the P7 platform, REE is one step closer to obtaining order commitments and serial production.",0.0,"With the upcoming commencement of commercial trials for the P7 platform, REE is one step closer to obtaining order commitments and serial production. [Nguồn: doc_19]",doc_19,"With the upcoming commencement of commercial trials for the P7 platform, REE is one step closer to obtaining order commitments and serial production.",0.0,,
+B15,"How many hydrogen fuel-cell trucks were ordered from Nikola, and what California deadline applies to drayage trucks?",doc_20,Nikola reported orders for 140 trucks; California requires zero-emission drayage trucks by 2035.,140; 2035,doc_20,doc_20,1,1,True,True,All drayage trucks entering seaports and intermodal railyards would be required to be zero-emission by 2035. [Nguồn: doc_20],doc_20,All drayage trucks entering seaports and intermodal railyards would be required to be zero-emission by 2035.,0.5,All drayage trucks entering seaports and intermodal railyards would be required to be zero-emission by 2035. [Nguồn: doc_20],doc_20,All drayage trucks entering seaports and intermodal railyards would be required to be zero-emission by 2035.,0.5,"to 37 from 39; Nikola; California; orders for 140 hydrogen fuel cell trucks from 12 end customers; only zero-emission drayage trucks may register in the CARB Online System beginning January 1, 2024","(Expectations for future EV sales, FELL, to 37 from 39) [doc_23] | (doc_23, MENTIONS, Expectations for future EV sales) [doc_23] | (doc_23, MENTIONS, to 37 from 39) [doc_23]"
+B16,"How many U.S. buyers chose EVs in 2023, and what market share did EVs reach?",doc_30,Nearly 1.2 million buyers chose EVs and EVs reached 7.6% share.,1.2 million; 7.6%,doc_43,doc_43,16,16,False,False,"China has become the leading global exporter of vehicles (including cars, sport utility vehicles (SUVs), pickups, and vans) with its nearly six million (5.6 million) vehicle exports in 2023 far surpassing those of Germany and Japan.[41] Chinese BEV exports rose 70 percent in 2023, reaching $34.1 billion in value.[42] Chinese producers accounted for approximately 35 percent of global EV exports as of year-end 2022.[43] From 2000 to 2023, Chinese EV exports increased over 850 percent.[44] Forty percent of Chinese BEV exports are destined for European markets, explaining how China’s share of the European EV market grew from just 0.5 percent in 2019 to 9.3 percent in 2023, with that share expected to reach 25 percent by year-end 2024.[45]
+Analysts predict that Chinese carmakers will capture one-third of the global auto vehicle market by the end of this decade. [Nguồn: doc_43]",doc_43,"China has become the leading global exporter of vehicles (including cars, sport utility vehicles (SUVs), pickups, and vans) with its nearly six million (5.6 million) vehicle exports in 2023 far surpassing those of Germany and Japan.[41] Chinese BEV exports rose 70 percent in 2023, reaching $34.1 billion in value.[42] Chinese producers accounted for approximately 35 percent of global EV exports as of year-end 2022.[43] From 2000 to 2023, Chinese EV exports increased over 850 percent.[44] Forty percent of Chinese BEV exports are destined for European markets, explaining how China’s share of the European EV market grew from just 0.5 percent in 2019 to 9.3 percent in 2023, with that share expected to reach 25 percent by year-end 2024.[45]
+Analysts predict that Chinese carmakers will capture one-third of the global auto vehicle market by the end of this decade.",0.0,"China has become the leading global exporter of vehicles (including cars, sport utility vehicles (SUVs), pickups, and vans) with its nearly six million (5.6 million) vehicle exports in 2023 far surpassing those of Germany and Japan.[41] Chinese BEV exports rose 70 percent in 2023, reaching $34.1 billion in value.[42] Chinese producers accounted for approximately 35 percent of global EV exports as of year-end 2022.[43] From 2000 to 2023, Chinese EV exports increased over 850 percent.[44] Forty percent of Chinese BEV exports are destined for European markets, explaining how China’s share of the European EV market grew from just 0.5 percent in 2019 to 9.3 percent in 2023, with that share expected to reach 25 percent by year-end 2024.[45]
+Analysts predict that Chinese carmakers will capture one-third of the global auto vehicle market by the end of this decade. [Nguồn: doc_43]",doc_43,"China has become the leading global exporter of vehicles (including cars, sport utility vehicles (SUVs), pickups, and vans) with its nearly six million (5.6 million) vehicle exports in 2023 far surpassing those of Germany and Japan.[41] Chinese BEV exports rose 70 percent in 2023, reaching $34.1 billion in value.[42] Chinese producers accounted for approximately 35 percent of global EV exports as of year-end 2022.[43] From 2000 to 2023, Chinese EV exports increased over 850 percent.[44] Forty percent of Chinese BEV exports are destined for European markets, explaining how China’s share of the European EV market grew from just 0.5 percent in 2019 to 9.3 percent in 2023, with that share expected to reach 25 percent by year-end 2024.[45]
+Analysts predict that Chinese carmakers will capture one-third of the global auto vehicle market by the end of this decade.",0.0,,
+B17,Did U.S. light-duty EV sales show growth or decline through the third quarter of 2023?,doc_36,They showed continued and significant growth.,continued; significant growth,doc_36,doc_36,1,1,True,True,Light-duty EV sales data from the Alliance for Automotive Innovation shows continued and significant growth in the United States from 2021 through the third quarter of 2023. [Nguồn: doc_36],doc_36,Light-duty EV sales data from the Alliance for Automotive Innovation shows continued and significant growth in the United States from 2021 through the third quarter of 2023.,1.0,Light-duty EV sales data from the Alliance for Automotive Innovation shows continued and significant growth in the United States from 2021 through the third quarter of 2023. [Nguồn: doc_36],doc_36,Light-duty EV sales data from the Alliance for Automotive Innovation shows continued and significant growth in the United States from 2021 through the third quarter of 2023.,1.0,,
+B18,What proportion of U.S. adults said they would seriously consider an EV for their next purchase?,doc_44,Thirty-eight percent said they were very or somewhat likely to consider an EV.,38%,doc_42,doc_42,2,2,True,True,"Numbers, Facts and Trends Shaping Your World
+Read our research on:
+Full Topic List
+Read Our Research On:
+|
+About four-in-ten Americans (38%) say they’re very or somewhat likely to seriously consider an electric vehicle (EV) for their next vehicle purchase, according to a recent Pew Research Center survey. [Nguồn: doc_44]",doc_44,"Numbers, Facts and Trends Shaping Your World
+Read our research on:
+Full Topic List
+Read Our Research On:
+|
+About four-in-ten Americans (38%) say they’re very or somewhat likely to seriously consider an electric vehicle (EV) for their next vehicle purchase, according to a recent Pew Research Center survey.",1.0,"Numbers, Facts and Trends Shaping Your World
+Read our research on:
+Full Topic List
+Read Our Research On:
+|
+About four-in-ten Americans (38%) say they’re very or somewhat likely to seriously consider an electric vehicle (EV) for their next vehicle purchase, according to a recent Pew Research Center survey. [Nguồn: doc_44]",doc_44,"Numbers, Facts and Trends Shaping Your World
+Read our research on:
+Full Topic List
+Read Our Research On:
+|
+About four-in-ten Americans (38%) say they’re very or somewhat likely to seriously consider an electric vehicle (EV) for their next vehicle purchase, according to a recent Pew Research Center survey.",1.0,"more than $1 billion in upfront costs on their purchase of more than 150,000 clean vehicles","(American consumers, SAVED, more than $1 billion in upfront costs on their purchase of more than 150,000 clean vehicles) [doc_43] | (American consumers, SAVED, more than $1 billion in upfront costs on their purchase of more than 150,000 clean vehicles) [doc_66] | (doc_43, MENTIONS, American consumers) [doc_43]"
+B19,"Across 21 markets in Q2 2024, what electrified-vehicle share and EV sales growth were reported?",doc_67,Electrified vehicles had 37% share and EV sales grew 21% year over year.,37%; 21%,doc_43,doc_43,9,9,False,False,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales. [Nguồn: doc_43]",doc_43,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales.",0.0,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales. [Nguồn: doc_43]",doc_43,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales.",0.0,,
+B20,What were global electrified passenger-vehicle sales in 2022 and the projected level for 2030?,doc_70,Sales exceeded ten million in 2022 and were projected to reach roughly 40 million in 2030.,ten million; 40 million,doc_43,doc_43,17,19,False,False,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales. [Nguồn: doc_43]",doc_43,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales.",0.0,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales. [Nguồn: doc_43]",doc_43,"There exist several types of new energy vehicles (NEVs), with the most significant being fully battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid-electric vehicles (HEVs).[21] By year-end 2024, analysts expect that BEVs and PHEVs will account for 21.8 percent of all new vehicles sold globally, an increase of 2 percentage points from the 19.2 percent they accounted for in 2023.[22] (See figure 1.)
+China has become the dominant market for both EV production and EV sales.",0.0,global EV market; electrified vehicle market share,"(China, DOMINATES, global EV market) [doc_10] | (China, MADE, 16 percent of batteries and vehicles sold in Europe in 2022) [doc_7] | (China, MADE, 16 percent of batteries and vehicles sold in Europe in 2022) [doc_65]"

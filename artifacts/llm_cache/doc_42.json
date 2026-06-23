@@ -1,0 +1,1 @@
+{"model": "gpt-4o-mini", "triples": [{"subject": "China", "predicate": "WAS", "object": "Tesla’s second-largest market by sales in 2022", "doc_id": "doc_42", "sentence": "China was Tesla’s second-largest market by sales in 2022."}], "usage": {"calls": 1, "input_tokens": 773, "output_tokens": 545}}

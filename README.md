@@ -5,7 +5,7 @@
 
 ## 1. Câu hỏi nghiên cứu
 
-**Trích xuất thực thể.** LLM có thể phân biệt thực thể với thuộc tính bằng cách sinh các triple có kiểu: tên nút nằm trong `subject` và `object`, còn thông tin mô tả trở thành nhãn quan hệ, bằng chứng, hoặc thuộc tính của nút/cạnh. Trong lab này, tổ chức, con người, chính sách, sản phẩm, địa điểm và công nghệ là các nút; các nhãn như `REPORTS_FINANCIAL_RESULT`, `REPORTS_SALES` và `MENTIONS` là các quan hệ.
+**Trích xuất thực thể.** LLM có thể phân biệt thực thể với thuộc tính bằng cách sinh các triple có kiểu: tên nút nằm trong `subject` và `object`, còn thông tin mô tả trở thành nhãn quan hệ, bằng chứng, hoặc thuộc tính của nút/cạnh. Trong lab này, tổ chức, con người, chính sách, sản phẩm, địa điểm và công nghệ là các nút. Nhãn quan hệ phụ thuộc extractor: run LLM (`--extractor openai`, dùng cho báo cáo này) sinh predicate `UPPER_SNAKE_CASE` tự do theo ngữ cảnh câu — ví dụ thực tế `ANNOUNCED`, `IS_A_SUBSIDIARY_OF`, `DELIVER`, `REACHED`, `FORECAST`, `WAS`, `HAD`; còn extractor heuristic offline dùng tập nhãn cố định, bảo thủ như `REPORTS_FINANCIAL_RESULT`, `REPORTS_SALES`, `REPORTS_POLICY` và `MENTIONS`.
 
 **Khử trùng lặp đồ thị.** Khử trùng lặp quan trọng vì những tên lặp như `Google`, `Alphabet` hoặc `Google LLC` có thể chia cắt một thực thể thật thành nhiều nút. Đồ thị bị phân mảnh làm giảm degree centrality, phá vỡ duyệt nhiều hop và có thể khiến bước trả lời bỏ sót bằng chứng.
 

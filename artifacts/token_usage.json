@@ -1,0 +1,10 @@
+{
+  "extractor": "openai",
+  "model": "gpt-4o-mini",
+  "calls": 70,
+  "input_tokens": 61252,
+  "output_tokens": 36853,
+  "input_cost_per_1m_usd": 0.15,
+  "output_cost_per_1m_usd": 0.6,
+  "estimated_cost_usd": 0.0312996
+}

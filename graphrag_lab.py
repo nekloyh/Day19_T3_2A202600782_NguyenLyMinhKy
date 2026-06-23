@@ -10,6 +10,7 @@ import json
 import math
 import os
 import re
+import textwrap
 import threading
 import time
 from collections import Counter, defaultdict
@@ -595,38 +596,96 @@ def evaluate(docs: list[Document], graph: nx.MultiDiGraph, flat_index: tuple[Cou
     return summary
 
 
-def draw_graph(graph: nx.MultiDiGraph, output: Path) -> None:
-    """Render a readable, semantically-labelled slice rather than a hairball."""
-    focus_names = {"Tesla", "NVIDIA", "VinFast", "Polestar", "ZEEKR", "Nikola", "Mercedes-Benz", "Inflation Reduction Act", "California", "Pew Research Center"}
-    focus = [node for node in graph.nodes if str(node) in focus_names]
+_INVALID_XML = re.compile(r"[^\x09\x0A\x0D\x20-퟿-�\U00010000-\U0010FFFF]")
+
+
+def write_graphml(graph: nx.MultiDiGraph, path: Path) -> None:
+    """Serialize a GraphML-safe copy.
+
+    Some sources are PDFs whose extracted body is binary; storing it on a node
+    and writing it verbatim produces XML that cannot be parsed back. Drop the
+    bulky, serialization-only ``text`` attribute and strip any control bytes
+    that are illegal in XML 1.0 so the artifact round-trips.
+    """
+    safe = graph.copy()
+    for _, data in safe.nodes(data=True):
+        data.pop("text", None)
+        for key, value in list(data.items()):
+            if isinstance(value, str):
+                data[key] = _INVALID_XML.sub("", value)
+    for _, _, data in safe.edges(data=True):
+        for key, value in list(data.items()):
+            if isinstance(value, str):
+                data[key] = _INVALID_XML.sub("", value)
+    nx.write_graphml(safe, path)
+
+
+def _wrap_label(text: str, width: int = 18, max_lines: int = 3) -> str:
+    """Wrap a node label onto a few short lines so long facts stay legible."""
+    lines = textwrap.wrap(str(text), width=width)
+    if len(lines) > max_lines:
+        lines = lines[:max_lines]
+        lines[-1] = lines[-1][: width - 1].rstrip() + "…"
+    return "\n".join(lines)
+
+
+def draw_graph(graph: nx.MultiDiGraph, output: Path, hubs: int = 7, per_hub: int = 6, max_nodes: int = 45) -> None:
+    """Render a readable neighbourhood around the most connected entities.
+
+    Works for any extractor: it keeps the real subject→object triples (dropping
+    the document-membership ``MENTIONS`` edges that would otherwise dominate) and
+    grows an ego graph around the highest-degree entity hubs, so the picture is
+    connected and labelled instead of a field of isolated nodes.
+    """
+    # Semantic view: only entity/fact nodes joined by extracted relations.
+    semantic = nx.DiGraph()
+    for source, target, data in graph.edges(data=True):
+        if data.get("predicate") == "MENTIONS":
+            continue
+        if graph.nodes[source].get("kind") == "document" or graph.nodes[target].get("kind") == "document":
+            continue
+        if not semantic.has_edge(source, target):
+            semantic.add_edge(source, target, predicate=data.get("predicate", ""))
+    for node in semantic.nodes:
+        semantic.nodes[node]["kind"] = graph.nodes[node].get("kind", "entity")
+
+    entity_nodes = [n for n, d in semantic.nodes(data=True) if d.get("kind") == "entity"]
+    seeds = sorted(entity_nodes, key=lambda n: semantic.degree(n), reverse=True)[:hubs]
+
     display = nx.DiGraph()
-    for node in focus:
-        candidates = []
-        for source, target, data in graph.out_edges(node, data=True):
-            if data["predicate"].startswith("REPORTS_"):
-                candidates.append((source, target, data))
-        for source, target, data in candidates[:2]:
-            display.add_node(source, kind="entity")
-            display.add_node(target, kind="fact")
-            display.add_edge(source, target, predicate=data["predicate"])
-    # Corpus changes should not make visualization empty; retain a compact
-    # high-degree fallback if none of the focus entities were recognized.
-    if not display.nodes:
-        entities_only = [n for n, d in graph.nodes(data=True) if d.get("kind") == "entity"]
-        selected = sorted(entities_only, key=lambda n: graph.degree(n), reverse=True)[:20]
-        display = graph.subgraph(selected).to_directed()
-    plt.figure(figsize=(18, 12))
-    pos = nx.spring_layout(display, seed=42, k=1.4)
-    colors = ["#8ecae6" if data.get("kind") == "entity" else "#ffddd2" for _, data in display.nodes(data=True)]
-    nx.draw_networkx_edges(display, pos, alpha=0.55, width=1.1, arrows=True, arrowsize=12)
-    nx.draw_networkx_nodes(display, pos, node_size=1150, node_color=colors, edgecolors="#023047")
-    labels = {node: (str(node)[:58] + "…") if len(str(node)) > 59 else str(node) for node in display.nodes}
+    for seed in seeds:
+        display.add_node(seed)
+        neighbours = sorted(
+            set(semantic.successors(seed)) | set(semantic.predecessors(seed)),
+            key=lambda n: semantic.degree(n),
+            reverse=True,
+        )[:per_hub]
+        for neighbour in neighbours:
+            if display.number_of_nodes() >= max_nodes and neighbour not in display:
+                continue
+            for u, v in ((seed, neighbour), (neighbour, seed)):
+                if semantic.has_edge(u, v):
+                    display.add_edge(u, v, predicate=semantic[u][v]["predicate"])
+    if not display.nodes:  # Empty corpus / no semantic edges: nothing to draw.
+        return
+    for node in display.nodes:
+        display.nodes[node]["kind"] = semantic.nodes[node].get("kind", "fact")
+
+    seed_set = set(seeds)
+    sizes = [2600 if n in seed_set else 850 for n in display.nodes]
+    colors = ["#ffb703" if n in seed_set else ("#8ecae6" if display.nodes[n].get("kind") == "entity" else "#caf0c8") for n in display.nodes]
+    plt.figure(figsize=(20, 14))
+    pos = nx.spring_layout(display, seed=42, k=3.2, iterations=300)
+    nx.draw_networkx_edges(display, pos, alpha=0.4, width=1.2, arrows=True, arrowsize=11, edge_color="#5a6472", connectionstyle="arc3,rad=0.06")
+    nx.draw_networkx_nodes(display, pos, node_size=sizes, node_color=colors, edgecolors="#023047", linewidths=1.0)
+    labels = {n: _wrap_label(n, width=16 if n in seed_set else 18) for n in display.nodes}
     nx.draw_networkx_labels(display, pos, labels=labels, font_size=7)
-    nx.draw_networkx_edge_labels(display, pos, edge_labels=nx.get_edge_attributes(display, "predicate"), font_size=6, rotate=False)
-    plt.title("Knowledge graph — selected entities and source-grounded facts")
+    edge_labels = {(u, v): d["predicate"].replace("_", " ").lower() for u, v, d in display.edges(data=True)}
+    nx.draw_networkx_edge_labels(display, pos, edge_labels=edge_labels, font_size=6, rotate=False, bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=0.7))
+    plt.title(f"Knowledge graph — {len(seed_set)} most-connected entities and their source-grounded facts", fontsize=13)
     plt.axis("off")
     plt.tight_layout()
-    plt.savefig(output / "knowledge_graph.png", dpi=180)
+    plt.savefig(output / "knowledge_graph.png", dpi=170, bbox_inches="tight")
     plt.close()
 
 
@@ -650,7 +709,7 @@ def main() -> None:
     flat_index = build_flat_index(docs)
     elapsed = time.perf_counter() - started
     pd.DataFrame([asdict(t) for t in triples]).to_csv(args.output / "triples.csv", index=False)
-    nx.write_graphml(graph, args.output / "knowledge_graph.graphml")
+    write_graphml(graph, args.output / "knowledge_graph.graphml")
     draw_graph(graph, args.output)
     summary = evaluate(docs, graph, flat_index, args.output, args.extractor)
     input_rate = float(os.getenv("OPENAI_INPUT_COST_PER_1M", "0"))
