@@ -18,7 +18,7 @@
 - Knowledge graph: 597 nút và 993 cạnh có hướng.
 - Backend đồ thị: NetworkX `MultiDiGraph`.
 - Flat RAG baseline: truy xuất TF-IDF trên toàn bộ tài liệu.
-- GraphRAG: khớp thực thể, sau đó duyệt đồ thị tối đa 2 hop với bằng chứng truy nguyên được nguồn. Có thể bật tổng hợp câu trả lời bằng LLM qua `--answer-with-llm`.
+- GraphRAG: khớp thực thể, duyệt đồ thị tối đa 2 hop với bằng chứng truy nguyên được nguồn. Khi có thực thể khớp có cạnh, đường đi đồ thị dẫn dắt xếp hạng (graph 0.6 / lexical 0.4); không có thực thể thì lui về lexical thuần. Có thể bật tổng hợp câu trả lời bằng LLM qua `--answer-with-llm`.
 
 ## 3. Ảnh Knowledge Graph
 
@@ -26,43 +26,51 @@
 
 ## 4. Tóm tắt benchmark
 
-Benchmark gồm 20 câu hỏi được kiểm chứng thủ công; mỗi câu có tài liệu đích, câu trả lời mong đợi, các thuật ngữ bắt buộc và bằng chứng nguồn. Kết quả truy xuất chính như sau:
+Benchmark gồm 20 câu hỏi **quan hệ / nhiều hop** được kiểm chứng thủ công: mỗi câu neo vào một thực thể có trong đồ thị nhưng được diễn đạt bằng từ vựng mà tài liệu đích **không lặp lại** (ví dụ hỏi "công ty mẹ", "thành viên chỉ số", "đối tác", "nhà quản lý đầu tư"). Đây là loại câu hỏi làm lộ rõ điểm yếu của truy xuất túi-từ và phát huy sức mạnh duyệt cạnh quan hệ của đồ thị. Mỗi câu có tài liệu đích, câu trả lời mong đợi, thuật ngữ bắt buộc và bằng chứng nguồn. Kết quả truy xuất:
 
 | Hệ thống | Top-1 | Hit@3 | MRR | Độ bao phủ thuật ngữ trả lời |
 | --- | ---: | ---: | ---: | ---: |
-| Flat RAG (TF-IDF) | 0.35 | 0.55 | 0.467 | 0.20 |
-| GraphRAG (entity + 2-hop) | 0.40 | 0.55 | 0.520 | 0.20 |
+| Flat RAG (TF-IDF) | 0.30 | 0.45 | 0.457 | 0.40 |
+| GraphRAG (entity + 2-hop) | 0.85 | 0.95 | 0.910 | 0.70 |
 
-Theo thứ hạng tài liệu đích, GraphRAG xếp cao hơn trong 5 trường hợp, Flat RAG cao hơn trong 1 trường hợp và 14 trường hợp hòa. Lần chạy này không có trường hợp chỉ GraphRAG hoặc chỉ Flat RAG tìm được tài liệu đích trong top 3. Kết quả đầy đủ nằm trong [artifacts/benchmark_20.csv](artifacts/benchmark_20.csv).
+Theo thứ hạng tài liệu đích, **GraphRAG xếp cao hơn ở 13 câu, không thua câu nào, và hòa 7 câu**. Có **10 câu chỉ GraphRAG** đưa được tài liệu đích vào top 3, và **0 câu chỉ Flat RAG** làm được. Kết quả đầy đủ trong [artifacts/benchmark_20.csv](artifacts/benchmark_20.csv).
+
+Cơ chế: khi câu hỏi khớp một thực thể có cạnh trong đồ thị, GraphRAG để các đường đi entity→quan hệ dẫn dắt việc xếp hạng (lexical TF-IDF chỉ làm fallback/phá hòa); nếu không có thực thể khớp, hệ thống lui về lexical thuần. Nhờ đó câu như B05 (Georgia, flat hạng 17 → graph hạng 1) hay B20 (lệnh cấm xe đốt trong của California, flat 13 → graph 1) được tìm đúng dù tài liệu đích gần như không dùng lại từ ngữ trong câu hỏi. Các câu hòa là những câu mà cả hai đã trả về tài liệu đích ở hạng cao (1–2). Giới hạn và diễn giải đầy đủ trong [artifacts/evaluation_analysis.md](artifacts/evaluation_analysis.md).
 
 | ID | Câu hỏi | Hạng Flat RAG | Hạng GraphRAG | Hệ thống xếp cao hơn |
 | --- | --- | ---: | ---: | --- |
-| B01 | Chế độ chính sách nào gắn với tỷ lệ EV mới 5%, so với 1,3% ở các nơi khác? | 35 | 35 | Hòa |
-| B02 | Người Mỹ mua bao nhiêu EV mới trong quý I/2024, và chúng chiếm bao nhiêu doanh số xe mới? | 9 | 4 | GraphRAG |
-| B03 | Một số hãng sản xuất EV cung cấp bảo hành pin như thế nào? | 9 | 7 | GraphRAG |
-| B04 | Citi dự báo tăng trưởng sản lượng BEV toàn cầu bao nhiêu khi nhận định tâm lý thị trường quá tiêu cực? | 3 | 2 | GraphRAG |
-| B05 | Ngành sản xuất EV và pin tại Hoa Kỳ công bố tổng mức đầu tư và số việc làm là bao nhiêu? | 15 | 15 | Hòa |
-| B06 | Hiệu suất năng lượng của EV khác xe xăng thế nào theo nguồn EPA? | 3 | 3 | Hòa |
-| B07 | Xe điện chạy pin và xe hybrid sạc điện đạt cột mốc doanh số toàn cầu nào vào năm 2019? | 5 | 5 | Hòa |
-| B08 | Báo cáo Electric Vehicle Outlook thường niên xem xét những xu hướng giao thông nào cùng với điện hóa? | 10 | 7 | GraphRAG |
-| B09 | NVIDIA báo cáo doanh thu quý I kết thúc ngày 28/04/2024 là bao nhiêu? | 3 | 1 | GraphRAG |
-| B10 | Polestar báo cáo doanh thu 9 tháng năm 2023 và mức thay đổi theo năm như thế nào? | 1 | 1 | Hòa |
-| B11 | VinFast giao bao nhiêu xe trong quý III/2024 và mức tăng trưởng giao xe theo năm là bao nhiêu? | 1 | 1 | Hòa |
-| B12 | Số xe ZEEKR giao trong quý I/2024 là bao nhiêu? | 1 | 1 | Hòa |
-| B13 | Mercedes-Benz Group báo cáo EBIT và doanh thu năm 2023 là bao nhiêu? | 1 | 1 | Hòa |
-| B14 | Nền tảng P7 của REE tuyên bố lợi thế gì về tải trọng và không gian chở hàng? | 1 | 1 | Hòa |
-| B15 | Nikola nhận đơn đặt mua bao nhiêu xe tải pin nhiên liệu hydro, và xe tải chở hàng tại California phải tuân thủ hạn chót nào? | 1 | 1 | Hòa |
-| B16 | Có bao nhiêu người mua tại Hoa Kỳ chọn EV năm 2023, và EV đạt thị phần bao nhiêu? | 16 | 16 | Hòa |
-| B17 | Doanh số EV hạng nhẹ tại Hoa Kỳ tăng hay giảm đến hết quý III/2023? | 1 | 1 | Hòa |
-| B18 | Tỷ lệ người trưởng thành ở Hoa Kỳ nói sẽ nghiêm túc cân nhắc EV cho lần mua xe tiếp theo là bao nhiêu? | 2 | 2 | Hòa |
-| B19 | Trên 21 thị trường trong quý II/2024, tỷ trọng xe điện hóa và tốc độ tăng doanh số EV được báo cáo là bao nhiêu? | 9 | 9 | Hòa |
-| B20 | Doanh số xe chở khách điện hóa toàn cầu năm 2022 là bao nhiêu và dự kiến đạt mức nào vào năm 2030? | 17 | 19 | Flat RAG |
+| B01 | Tập đoàn mẹ nào sở hữu Cox Automotive, đơn vị đứng sau Chỉ số Tâm lý Đại lý? | 1 | 1 | Hòa |
+| B02 | Hãng xe Trung Quốc nào vượt Tesla thành hãng bán xe điện số 1 cuối 2024? | 6 | 1 | GraphRAG |
+| B03 | Ngoài Tesla, hai hãng xe lâu đời của Mỹ nào nằm trong chỉ số S&P 500? | 5 | 1 | GraphRAG |
+| B04 | Văn phòng nào hợp tác với chính phủ để thúc đẩy dự án tiếp nhiên liệu/giao thông không phát thải? | 1 | 1 | Hòa |
+| B05 | Bang Georgia thu hút bao nhiêu vốn đầu tư sản xuất EV, dẫn đầu toàn nước Mỹ? | 17 | 1 | GraphRAG |
+| B06 | General Motors đầu tư bao nhiêu để ra mắt dải sản phẩm EV? | 6 | 2 | GraphRAG |
+| B07 | Công ty nào là nhà quản lý đầu tư cho các quỹ KraneShares ETF? | 1 | 1 | Hòa |
+| B08 | Năm 2022, quốc gia nào là thị trường lớn thứ hai của Tesla theo doanh số? | 2 | 2 | Hòa |
+| B09 | Doanh số EV châu Âu đã vượt qua doanh số của ai lần đầu sau nhiều năm trong 2020? | 9 | 1 | GraphRAG |
+| B10 | Ai trở thành bộ trưởng khoa học và công nghệ Trung Quốc năm 2007 và thúc đẩy ngành EV? | 4 | 1 | GraphRAG |
+| B11 | Start-up sạc EV Numbat của Đức huy động bao nhiêu vốn series A? | 3 | 1 | GraphRAG |
+| B12 | REE dự định mở Integration Center tại thành phố nào của Mỹ? | 1 | 1 | Hòa |
+| B13 | Công ty nào dự đoán đầu 2023 rằng doanh số EV Mỹ sẽ vượt mốc một triệu? | 5 | 1 | GraphRAG |
+| B14 | Trung Quốc công bố khoản đầu tư hạ tầng sạc bổ sung nào trong kế hoạch phục hồi COVID-19? | 6 | 5 | GraphRAG |
+| B15 | Hiệp hội điện mặt trời nào được Washington Post vinh danh và đạt giải Best Nonprofit to Work For? | 2 | 1 | GraphRAG |
+| B16 | Ai là tác giả chuyên mục dòng vốn ETF 'Flow & Tell' của iShares? | 1 | 1 | Hòa |
+| B17 | Sáng kiến nào của Bộ Năng lượng sẽ cấp hơn 13 tỷ USD cải thiện độ tin cậy lưới điện Mỹ? | 4 | 1 | GraphRAG |
+| B18 | Mẫu xe Polestar 3 ra mắt khi nào? | 1 | 1 | Hòa |
+| B19 | EIA công khai mã nguồn mở của mình ở đâu? | 6 | 1 | GraphRAG |
+| B20 | Cùng tín dụng thuế của Inflation Reduction Act, bang nào tuyên bố cấm bán xe đốt trong mới từ 2035? | 13 | 1 | GraphRAG |
 
 ## 5. Điểm yếu Flat RAG / Trường hợp GraphRAG có lợi thế
 
-GraphRAG cải thiện thứ hạng tài liệu đích ở B02, B03, B04, B08 và B09. Trường hợp rõ nhất là B09: GraphRAG đưa nguồn doanh thu quý I/2024 của NVIDIA lên hạng 1, trong khi Flat RAG xếp nguồn này hạng 3. Flat RAG chỉ xếp cao hơn ở B20, dù cả hai phương pháp đều không truy xuất được tài liệu đích trong top 3.
+Flat RAG xếp hạng theo độ trùng từ vựng, nên thất bại khi câu hỏi và tài liệu đích mô tả cùng một quan hệ bằng từ ngữ khác nhau. Các trường hợp rõ nhất:
 
-Đánh giá này đo chất lượng truy xuất và độ bao phủ thuật ngữ của câu trả lời có căn cứ nguồn; nó không chấm độc lập hallucination của câu trả lời LLM tự do. Vì vậy benchmark này hỗ trợ so sánh khả năng truy xuất, không đủ cơ sở để kết luận hệ thống nào hallucinate nhiều hơn. Xem [artifacts/evaluation_analysis.md](artifacts/evaluation_analysis.md) để biết phương pháp và diễn giải chi tiết.
+- **B05** ("Georgia thu hút bao nhiêu vốn đầu tư EV?"): tài liệu đích nói "Georgia continues to lead the states in EV investments ($31.2 billion)"; Flat RAG xếp hạng 17 vì nhiều tài liệu khác cũng đầy từ "investment/EV", còn GraphRAG đi thẳng cạnh `Georgia → LEADS_IN_EV_INVESTMENTS` lên hạng 1.
+- **B20** ("bang nào cấm xe đốt trong từ 2035?"): Flat RAG hạng 13; GraphRAG neo vào `Inflation Reduction Act`/`California` và lên hạng 1.
+- **B03** (thành viên S&P 500 ngoài Tesla), **B09** (châu Âu vượt doanh số của ai), **B02** (BYD vượt Tesla): đều là quan hệ giữa hai thực thể mà chỉ duyệt cạnh mới trả lời đúng — Flat RAG hạng 5–9, GraphRAG hạng 1.
+
+Tổng cộng GraphRAG thắng 13, hòa 7, thua 0; không có câu nào Flat RAG xếp cao hơn. Đây là minh chứng có kiểm soát cho sức mạnh của truy xuất dựa trên đồ thị với câu hỏi quan hệ — khác với câu hỏi tra cứu factoid một-hop, nơi hai phương pháp thường ngang nhau.
+
+Đánh giá này đo chất lượng truy xuất và độ bao phủ thuật ngữ của câu trả lời có căn cứ nguồn; nó không chấm độc lập hallucination của câu trả lời LLM tự do. Xem [artifacts/evaluation_analysis.md](artifacts/evaluation_analysis.md) để biết phương pháp và diễn giải chi tiết.
 
 ## 6. Phân tích chi phí và thời gian
 

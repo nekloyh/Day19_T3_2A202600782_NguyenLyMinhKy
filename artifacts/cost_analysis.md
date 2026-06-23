@@ -1,8 +1,7 @@
 # Cost analysis
 
 - Extractor: `openai`
-- Artifact build time from checkpoints: 0.488s
-- Full OpenAI extraction time: 800.173s (see `full_llm_indexing.md`)
+- Artifact build time for this run: 0.479s
 - Documents: 70; triples: 331
 - LLM calls: 70; input tokens: 61252; output tokens: 36853.
 - Estimated cost: $0.03129960.

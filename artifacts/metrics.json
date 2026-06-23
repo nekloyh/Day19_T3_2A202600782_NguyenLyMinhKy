@@ -3,7 +3,7 @@
   "nodes": 597,
   "edges": 993,
   "triples": 331,
-  "indexing_seconds": 0.488,
+  "indexing_seconds": 0.479,
   "extractor": "openai",
   "model": "gpt-4o-mini",
   "llm_calls": 70,
