@@ -1,0 +1,17 @@
+[project]
+name = "graphrag-knowledge-graph-lab"
+version = "0.1.0"
+description = "Offline-first GraphRAG lab using NetworkX"
+requires-python = ">=3.11"
+dependencies = [
+  "matplotlib>=3.8",
+  "networkx>=3.2",
+  "neo4j>=5.0",
+  "openai>=2.0",
+  "pandas>=2.2",
+  "langchain>=1.0",
+  "langchain-openai>=1.0",
+]
+
+[tool.uv]
+package = false
